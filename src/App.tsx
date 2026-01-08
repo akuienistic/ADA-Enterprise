@@ -13,6 +13,7 @@ import Events from "./pages/Events";
 import MusicStudio from "./pages/MusicStudio";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Loader from "@/components/ui/Loader";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         </Helmet>
+        <Loader />
         <Toaster />
         <Sonner />
         <BrowserRouter>

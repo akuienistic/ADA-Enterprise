@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import PrelaunchBanner from "./PrelaunchBanner";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -16,7 +15,6 @@ const Layout = ({ children }: LayoutProps) => {
       >
         Skip to main content
       </a>
-      <PrelaunchBanner />
       <Header />
       <main id="main-content" className="flex-1">
         {children}

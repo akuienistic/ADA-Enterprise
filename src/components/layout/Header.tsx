@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, Home, Info, Briefcase, Building, Folder, Calendar, Music, Mail } from "lucide-react";
 import adaLogo from "@/assets/ada-logo.jpg";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/industries", label: "Industries" },
-  { href: "/projects", label: "Projects" },
-  { href: "/events", label: "Events & Rentals" },
-  { href: "/music-studio", label: "Music Studio" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", icon: Home },
+  { href: "/about", label: "About", icon: Info },
+  { href: "/services", label: "Services", icon: Briefcase },
+  { href: "/industries", label: "Industries", icon: Building },
+  { href: "/projects", label: "Projects", icon: Folder },
+  { href: "/events", label: "Events & Rentals", icon: Calendar },
+  { href: "/music-studio", label: "Music Studio", icon: Music },
+  { href: "/contact", label: "Contact", icon: Mail },
 ];
 
 const Header = () => {
@@ -100,20 +100,22 @@ const Header = () => {
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-lg font-medium transition-colors ${
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors ${
                     location.pathname === link.href
                       ? "text-ada-red bg-ada-red/5"
                       : "text-foreground/80 hover:text-ada-navy hover:bg-muted"
                   }`}
                 >
+                  <link.icon className="w-5 h-5 flex-shrink-0" />
                   {link.label}
                 </Link>
               ))}
               <Link
                 to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-primary-ada text-center mt-3"
+                className="btn-primary-ada text-center mt-3 flex items-center justify-center gap-2"
               >
+                <Mail className="w-4 h-4" />
                 Request a Quote
               </Link>
             </div>

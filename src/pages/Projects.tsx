@@ -1,12 +1,16 @@
 import Layout from "@/components/layout/Layout";
 import CTASection from "@/components/ui/CTASection";
 import { CheckCircle } from "lucide-react";
+import hotelSupplyImg from "@/assets/HotelSupply.jpeg";
+import tentSetupImg from "@/assets/TentSetup.jpg";
+import corporateEventImg from "@/assets/CorperateEvent.jpeg";
 
 const projects = [
   {
     title: "Hotel Supply Partnership",
     client: "Leading Juba Hotel",
     industry: "Hospitality",
+    image: hotelSupplyImg,
     challenge:
       "A major hotel in Juba needed a reliable partner for consistent food and non-food supplies, facing challenges with inconsistent delivery times and quality from previous vendors.",
     solution:
@@ -22,6 +26,7 @@ const projects = [
     title: "NGO Camp Setup",
     client: "International Humanitarian Organization",
     industry: "NGO & Humanitarian",
+    image: tentSetupImg,
     challenge:
       "An international NGO required rapid setup of temporary facilities for a field operation, including shelter, furniture, and ongoing supply support.",
     solution:
@@ -37,6 +42,7 @@ const projects = [
     title: "Corporate Event Excellence",
     client: "Major Corporate Client",
     industry: "Events",
+    image: corporateEventImg,
     challenge:
       "A corporate client needed to host a 200+ person conference with professional standards, requiring venue setup, catering, audio-visual, and coordination.",
     solution:
@@ -61,8 +67,8 @@ const Projects = () => {
               Our Projects
             </h1>
             <p className="text-lg text-primary-foreground/90 leading-relaxed">
-              See how we've helped businesses and organizations across Juba achieve
-              their goals with reliable supplies, services, and support.
+              See how we've helped businesses and organizations across Juba achieve their goals with reliable supplies,
+              services, and support.
             </p>
           </div>
         </div>
@@ -89,40 +95,26 @@ const Projects = () => {
                     <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">
                       {project.title}
                     </h2>
-                    <p className="text-muted-foreground text-sm mb-6">
-                      Client: {project.client}
-                    </p>
+                    <p className="text-muted-foreground text-sm mb-6">Client: {project.client}</p>
 
                     <div className="space-y-5">
                       <div>
-                        <h3 className="font-heading font-bold text-foreground mb-2">
-                          The Challenge
-                        </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {project.challenge}
-                        </p>
+                        <h3 className="font-heading font-bold text-foreground mb-2">The Challenge</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{project.challenge}</p>
                       </div>
 
                       <div>
-                        <h3 className="font-heading font-bold text-foreground mb-2">
-                          Our Solution
-                        </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {project.solution}
-                        </p>
+                        <h3 className="font-heading font-bold text-foreground mb-2">Our Solution</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{project.solution}</p>
                       </div>
 
                       <div>
-                        <h3 className="font-heading font-bold text-foreground mb-3">
-                          Results
-                        </h3>
+                        <h3 className="font-heading font-bold text-foreground mb-3">Results</h3>
                         <ul className="grid sm:grid-cols-2 gap-2">
                           {project.outcome.map((item) => (
                             <li key={item} className="flex items-start gap-2">
                               <CheckCircle className="w-5 h-5 text-ada-red flex-shrink-0 mt-0.5" />
-                              <span className="text-foreground text-sm">
-                                {item}
-                              </span>
+                              <span className="text-foreground text-sm">{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -131,20 +123,12 @@ const Projects = () => {
                   </div>
 
                   {/* Visual */}
-                  <div
-                    className={`bg-gradient-to-br ${
-                      index === 0
-                        ? "from-ada-navy to-ada-navy/80"
-                        : index === 1
-                        ? "from-ada-red to-ada-red/80"
-                        : "from-ada-gold/80 to-ada-gold/60"
-                    } min-h-[200px] lg:min-h-full flex items-center justify-center order-1 lg:order-2`}
-                  >
-                    <div className="text-center p-8">
-                      <span className="text-6xl md:text-8xl font-heading font-bold text-primary-foreground/20">
-                        0{index + 1}
-                      </span>
-                    </div>
+                  <div className="order-1 lg:order-2">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover min-h-[250px] lg:min-h-full"
+                    />
                   </div>
                 </div>
               </article>
@@ -164,9 +148,7 @@ const Projects = () => {
               { value: "5+", label: "Industries Served" },
             ].map((stat) => (
               <div key={stat.label}>
-                <p className="font-heading text-3xl md:text-4xl font-bold text-ada-gold mb-1">
-                  {stat.value}
-                </p>
+                <p className="font-heading text-3xl md:text-4xl font-bold text-ada-gold mb-1">{stat.value}</p>
                 <p className="text-primary-foreground/80 text-sm">{stat.label}</p>
               </div>
             ))}

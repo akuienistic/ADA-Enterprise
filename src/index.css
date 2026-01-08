@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ADA Brand Colors */
+    --background: 210 20% 98%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    /* Navy Primary */
+    --primary: 209 75% 17%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light backgrounds */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 209 75% 17%;
+
+    --muted: 210 15% 93%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Gold accent */
+    --accent: 42 100% 67%;
+    --accent-foreground: 220 20% 10%;
+
+    /* Brand Red for CTAs */
+    --destructive: 0 70% 47%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 209 75% 17%;
+
+    --radius: 0.75rem;
+
+    /* Custom ADA tokens */
+    --ada-navy: 209 75% 17%;
+    --ada-red: 0 70% 47%;
+    --ada-gold: 42 100% 67%;
+    --ada-light: 210 20% 98%;
+    --ada-dark: 220 20% 10%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 42 100% 67%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 42 100% 67%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 70% 47%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 42 100% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .container-ada {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .text-gradient-ada {
+    @apply bg-gradient-to-r from-ada-navy via-ada-red to-ada-gold bg-clip-text text-transparent;
+  }
+
+  .card-ada {
+    @apply bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .btn-primary-ada {
+    @apply bg-ada-red text-white font-semibold rounded-xl px-6 py-3 shadow-md hover:bg-ada-red/90 transition-all duration-200 hover:shadow-lg;
+  }
+
+  .btn-secondary-ada {
+    @apply border-2 border-ada-navy text-ada-navy font-semibold rounded-xl px-5 py-2.5 hover:bg-ada-navy hover:text-white transition-all duration-200;
+  }
+
+  .btn-whatsapp {
+    @apply bg-[#25D366] text-white font-semibold rounded-xl px-5 py-2.5 hover:bg-[#20BA5C] transition-all duration-200 flex items-center gap-2;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ada-navy focus:ring-offset-2;
+  }
+}
+
+@layer utilities {
+  .bg-ada-navy {
+    background-color: hsl(var(--ada-navy));
+  }
+  .bg-ada-red {
+    background-color: hsl(var(--ada-red));
+  }
+  .bg-ada-gold {
+    background-color: hsl(var(--ada-gold));
+  }
+  .bg-ada-light {
+    background-color: hsl(var(--ada-light));
+  }
+  .text-ada-navy {
+    color: hsl(var(--ada-navy));
+  }
+  .text-ada-red {
+    color: hsl(var(--ada-red));
+  }
+  .text-ada-gold {
+    color: hsl(var(--ada-gold));
+  }
+  .border-ada-navy {
+    border-color: hsl(var(--ada-navy));
+  }
+  .border-ada-red {
+    border-color: hsl(var(--ada-red));
+  }
+}
